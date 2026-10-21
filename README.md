@@ -1,12 +1,14 @@
 # AI 项目学习台
 
-## [▶ 打开 AI Project Studio 工作台](https://ai-project-studio-7b26.swiftbook4.chatgpt.site/)
+## [▶ 打开 AI Project Studio 工作台](https://htvvvv0126.github.io/ai-project-studio/)
 
-**在线网址：[https://ai-project-studio-7b26.swiftbook4.chatgpt.site/](https://ai-project-studio-7b26.swiftbook4.chatgpt.site/)**
+**在线网址：[https://htvvvv0126.github.io/ai-project-studio/](https://htvvvv0126.github.io/ai-project-studio/)**
 
 无需下载代码。打开后点击「以游客身份继续」，进入 AI 运用等级图，开始学习。
 
 学习记录保存在当前浏览器；换设备前请在工作台导出记录备份。
+
+备用入口：[原 Sites 工作台](https://ai-project-studio-7b26.swiftbook4.chatgpt.site/)。两个域名的学习记录各自保存在浏览器中；从旧网址迁移时，请先导出记录，再到新网址导入。
 
 ---
 
