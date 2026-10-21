@@ -1,0 +1,576 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-21T13:43:56.813263+00:00",
+  "title": "Design System: AI项目学习台",
+  "extensions": {
+    "colorMeta": {
+      "page": {
+        "role": "neutral",
+        "displayName": "浅灰纸底"
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "阅读白"
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "正文深灰"
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "辅助深灰"
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "轻分隔线"
+      },
+      "navy": {
+        "role": "neutral",
+        "displayName": "品牌海军蓝（标志与toast等有限用途）"
+      },
+      "blue": {
+        "role": "primary",
+        "displayName": "行动蓝"
+      },
+      "blue-hover": {
+        "role": "primary",
+        "displayName": "行动蓝悬停"
+      },
+      "blue-soft": {
+        "role": "primary",
+        "displayName": "浅雾蓝"
+      },
+      "success": {
+        "role": "secondary",
+        "displayName": "自查青绿"
+      },
+      "success-bg": {
+        "role": "secondary",
+        "displayName": "自查浅底"
+      },
+      "danger": {
+        "role": "secondary",
+        "displayName": "错误红"
+      },
+      "danger-bg": {
+        "role": "secondary",
+        "displayName": "错误浅底"
+      },
+      "warning": {
+        "role": "secondary",
+        "displayName": "保存警示赭色"
+      },
+      "warning-bg": {
+        "role": "secondary",
+        "displayName": "警示浅底"
+      },
+      "focus": {
+        "role": "primary",
+        "displayName": "焦点蓝"
+      }
+    },
+    "typographyMeta": {
+      "headline": {
+        "displayName": "页面标题",
+        "purpose": "所有学习页面48px，900px及以下40px，650px及以下34px；lesson和welcome保留明确例外。"
+      },
+      "title": {
+        "displayName": "面板标题",
+        "purpose": "课程列表等主要面板。"
+      },
+      "body": {
+        "displayName": "界面正文",
+        "purpose": "全站系统字体，学习界面正文16px；面板和辅助层级按组件。"
+      },
+      "reading": {
+        "displayName": "课程正文",
+        "purpose": "课程正文17px/1.95，手机16px/1.95。"
+      },
+      "label": {
+        "displayName": "操作标签",
+        "purpose": "按钮等短操作文字。"
+      },
+      "code": {
+        "displayName": "代码",
+        "purpose": "可复制的代码与提示词示例。"
+      }
+    },
+    "shadows": [
+      {
+        "name": "mobile-menu",
+        "value": "10px 0 50px #00000025",
+        "purpose": "移动端dialog导航浮层。"
+      },
+      {
+        "name": "toast",
+        "value": "0 8px 25px #00000020",
+        "purpose": "短暂状态提示浮层。"
+      },
+      {
+        "name": "stage-item-hover",
+        "value": "0 5px 14px #00000009",
+        "purpose": "仅hover设备上的阶段列表临时悬停反馈；非普通面板常驻阴影。"
+      },
+      {
+        "name": "stage-card-hover",
+        "value": "0 5px 14px #00000008",
+        "purpose": "仅hover设备上的等级阶段卡临时悬停反馈。"
+      }
+    ],
+    "motion": [
+      {
+        "name": "button-state",
+        "value": "background 200ms ease,color 200ms ease,border-color 200ms ease,transform 200ms ease",
+        "purpose": "学习路由按钮；按下translateY(1px)，reduced motion取消。"
+      },
+      {
+        "name": "progress-transform",
+        "value": "transform 400ms ease;transform-origin:left;scaleX(done/total)",
+        "purpose": "持久侧栏真实进度变化；width固定100%，相同值不触发新过渡，非等级原生progress。"
+      },
+      {
+        "name": "reduced-motion",
+        "value": "animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto",
+        "purpose": "减少动态效果偏好；scroll-behavior仅作用于html。"
+      },
+      {
+        "name": "route-entry",
+        "value": "350ms cubic-bezier(.16,1,.3,1);opacity:.94→1;translateY:8px→0",
+        "purpose": "每个route/id每次页面生命周期首次进入一次；reduced motion跳过。"
+      },
+      {
+        "name": "stage-hover",
+        "value": "200ms;translateY(-3px)",
+        "purpose": "支持hover设备的阶段列表ease与等级卡cubic-bezier(.16,1,.3,1)，临时中性阴影；reduce取消位移与过渡。"
+      },
+      {
+        "name": "details-toggle",
+        "value": "height 250ms cubic-bezier(.16,1,.3,1)",
+        "purpose": "stage-item、stage-card-details、capability-detail、glossary-item复用同一250ms处理器；可反向，reduce或无WAAPI用原生details。"
+      },
+      {
+        "name": "navigation-state",
+        "value": "background-color 180ms ease,color 180ms ease",
+        "purpose": "desktopNav/mobileNav按钮；reduce设为none。"
+      },
+      {
+        "name": "guest-action",
+        "value": "background 200ms ease,transform 200ms ease;active translateY(1px)",
+        "purpose": "仅欢迎页游客按钮；reduce取消位移与过渡。"
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "wide",
+        "value": "1500px"
+      },
+      {
+        "name": "compact-desktop",
+        "value": "1190px"
+      },
+      {
+        "name": "single-workspace",
+        "value": "1050px"
+      },
+      {
+        "name": "mobile-navigation",
+        "value": "900px"
+      },
+      {
+        "name": "narrow-content",
+        "value": "720px"
+      },
+      {
+        "name": "phone",
+        "value": "650px"
+      }
+    ],
+    "variants": {
+      "welcome": {
+        "selector": "body[data-view=\"welcome\"]",
+        "scope": "空hash/#welcome独立入口；其他所有学习路由继承frontmatter浅色规范。",
+        "tokens": {
+          "colors": {
+            "page": "#f5f5f7",
+            "surface": "#fff",
+            "ink": "#1d1d1f",
+            "muted": "#626267",
+            "blue": "#0071e3",
+            "line": "#d2d2d7",
+            "guest-hover": "#0066cc",
+            "disabled-surface": "#ededf0"
+          },
+          "typography": {
+            "fontFamily": "-apple-system, BlinkMacSystemFont, \"SF Pro Display\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+            "headline": {
+              "fontSize": "36px",
+              "mobileFontSize": "28px",
+              "fontWeight": 600,
+              "lineHeight": 1.3,
+              "letterSpacing": "-.025em"
+            },
+            "intro": {
+              "fontSize": "17px",
+              "mobileFontSize": "16px"
+            },
+            "card-title": {
+              "fontSize": "22px",
+              "mobileFontSize": "20px",
+              "fontWeight": 600
+            },
+            "body": "14px",
+            "button": "15px",
+            "supporting": "13px",
+            "small": "12px"
+          },
+          "rounded": {
+            "card": "24px",
+            "input": "12px",
+            "button": "24px"
+          },
+          "spacing": {
+            "main": "36px 24px 32px",
+            "main-mobile": "24px 20px",
+            "card": "28px 32px",
+            "card-mobile": "24px"
+          },
+          "sizes": {
+            "card-max-width": "420px",
+            "input-height": "48px",
+            "button-min-height": "48px",
+            "brand-link-min-height": "44px",
+            "return-link-min-height": "44px"
+          },
+          "focus": {
+            "outline": "3px solid #0071e3",
+            "outline-offset": "4px"
+          },
+          "breakpoint": "650px"
+        },
+        "fontPolicy": "全站同一授权系统字体栈；SF Pro Display仅本机回退，不下载或分发。",
+        "behavior": {
+          "guestRoute": "#levels",
+          "login": "disabled fieldset；无真实认证、凭证采集或身份偏好写入",
+          "accountLinks": "静态即将开放说明",
+          "storage": "当前浏览器保存，可导出；无跨设备同步"
+        }
+      },
+      "learning": {
+        "selector": "body:not([data-view=\"welcome\"])",
+        "sharedTokenSelector": ":root",
+        "scope": "第五轮当前：所有学习路由共用canonical frontmatter palette；home/lesson保留页面结构与阅读例外。",
+        "source": [
+          "dist/styles.css",
+          "dist/app.js",
+          ".impeccable/surfaces/dist-index-html.md（第五轮）"
+        ],
+        "tokens": {
+          "colors": {
+            "page": "#f5f5f7",
+            "surface": "#fff",
+            "ink": "#1d1d1f",
+            "muted": "#626267",
+            "line": "#d2d2d7",
+            "blue": "#0071e3",
+            "blue-hover": "#0062c4",
+            "blue-soft": "#e8f1fb",
+            "current-stage-border": "#78afe5",
+            "navigation-text": "#515156",
+            "navigation-active-text": "#005dbb",
+            "example-surface": "#f5f5f7",
+            "field-border": "#bcbcc1"
+          },
+          "typography": {
+            "fontFamily": "-apple-system, BlinkMacSystemFont, \"SF Pro Display\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+            "body": "16px",
+            "home-intro": {
+              "fontSize": "17px",
+              "mobileFontSize": "16px",
+              "lineHeight": 1.8,
+              "maxWidth": "65ch"
+            },
+            "recommendation-title": {
+              "fontSize": "24px",
+              "mobileFontSize": "22px",
+              "fontWeight": 600,
+              "lineHeight": 1.5
+            },
+            "stage-title": {
+              "fontSize": "19px",
+              "mobileFontSize": "18px",
+              "fontWeight": 600,
+              "lineHeight": 1.5
+            },
+            "lesson-headline": {
+              "fontSize": "32px",
+              "mobileFontSize": "27px",
+              "fontWeight": 600,
+              "lineHeight": 1.4,
+              "mobileLineHeight": 1.45,
+              "letterSpacing": "-.02em"
+            },
+            "reading": {
+              "fontSize": "17px",
+              "mobileFontSize": "16px",
+              "lineHeight": 1.95
+            },
+            "lesson-section-title": {
+              "fontSize": "24px",
+              "mobileFontSize": "22px",
+              "fontWeight": 600,
+              "lineHeight": 1.5
+            },
+            "knowledge-title": {
+              "fontSize": "19px",
+              "fontWeight": 600,
+              "lineHeight": 1.6
+            },
+            "sources": {
+              "fontSize": "13px",
+              "lineHeight": 1.85
+            },
+            "code": {
+              "fontSize": "14px",
+              "lineHeight": 1.9
+            },
+            "field": {
+              "fontSize": "16px",
+              "lineHeight": 1.8
+            },
+            "page-headline": {
+              "fontSize": "48px",
+              "tabletFontSize": "40px",
+              "mobileFontSize": "34px",
+              "fontWeight": 600,
+              "lineHeight": 1.2,
+              "letterSpacing": "-.025em"
+            }
+          },
+          "rounded": {
+            "surface": "24px",
+            "control": "999px",
+            "navigation": "12px",
+            "article-mobile": "20px",
+            "example": "16px",
+            "practice": "20px",
+            "field": "12px",
+            "choice": "14px"
+          },
+          "spacing": {
+            "main": "48px 40px 80px",
+            "main-tablet": "40px 28px 64px",
+            "main-mobile": "32px 20px 52px",
+            "lesson-main-padding-top": "28px",
+            "lesson-main-mobile": "24px 16px 48px",
+            "recommendation": "26px 30px",
+            "recommendation-mobile": "24px",
+            "recommendation-margin-bottom": "36px",
+            "recommendation-margin-bottom-mobile": "32px",
+            "stage-gap": "16px",
+            "stage-summary": "22px 24px",
+            "stage-summary-mobile": "20px",
+            "article": "36px 40px",
+            "article-tablet": "32px",
+            "article-mobile": "28px 20px",
+            "practice": "24px",
+            "practice-mobile": "20px 16px",
+            "lesson-column-gap": "28px",
+            "home-column-gap": "24px",
+            "card": "28px",
+            "card-mobile": "24px",
+            "section": "32px"
+          },
+          "sizes": {
+            "main-max-width": "1280px",
+            "article-max-width": "800px",
+            "reading-max-available-width": "720px",
+            "lesson-aside": "minmax(200px,240px)",
+            "home-aside": "260px",
+            "button-min-height": "44px",
+            "field-min-height": "48px",
+            "stage-progress": "64px × 4px",
+            "sidebar": "232px",
+            "topbar": "76px",
+            "topbar-tablet": "68px",
+            "topbar-mobile": "66px",
+            "quiz-option-min-height": "56px",
+            "notes-empty-max-width": "620px"
+          },
+          "focus": {
+            "outline": "3px solid #0071e3",
+            "outline-offset": "4px",
+            "field-outline-offset": "3px"
+          },
+          "breakpoints": [
+            "1279px",
+            "900px",
+            "650px"
+          ]
+        },
+        "fontPolicy": "全站同一授权系统字体栈；SF Pro Display仅本机回退，不下载或分发。",
+        "behavior": {
+          "guestRoute": "#levels",
+          "navigationOrder": [
+            "levels",
+            "home"
+          ],
+          "recommendation": "既有 nextLesson() 的名称、介绍与时间；必修自查全部完成后转原最终阶段挑战",
+          "stages": "原生 details 展示6必修+1选修，15课必修门槛不含选修",
+          "lessonOrder": "原目标置顶；侧栏改为阶段与本课导航；保留全部课文、实践与反馈",
+          "actions": "原复制、自查、笔记、完成、返回、前后课与阶段提交保持原功能",
+          "storage": "原记录键/ID/评估不变；无账号或云同步",
+          "motion": "复用350/200/250/180/400ms及减少动态效果，不新增入场动画",
+          "quiz": "提交前仅统计当前DOM checked数量，无持久写入；提交仍固定选项判分，正确答案和解释逐题显示；知识/实操/独立能力分开。",
+          "notes": "居中空状态；有记录保留原文/课程关联/编辑，不伪造时间。",
+          "concepts": "原搜索/内容和原生details；复用250ms处理器。",
+          "resources": "既有DeepSeek/ChatGPT官方链接小卡；完整表格与其他资料保留。",
+          "scopeHistory": "此前仅levels、再home/lesson的浅色限制均已撤销；旧navy/sidebar/1392px/52px基础不再规范。"
+        }
+      }
+    },
+    "canonicalSource": {
+      "primitives": "DESIGN.md YAML frontmatter",
+      "scope": "全站浅色原色与系统字体；body:not(welcome)学习外壳",
+      "history": "第五轮推广当前home视觉；不是新增视觉世界。",
+      "exceptions": [
+        "lesson课名32/27px、正文17/16px",
+        "welcome标题36/28px及独立420px卡片",
+        "品牌navy与诚实语义青绿/红保留"
+      ]
+    },
+    "detectorReview": {
+      "file": ".impeccable/review/detector-round5.json",
+      "runs": 1,
+      "findings": 281,
+      "advisory": 278,
+      "warning": 3,
+      "warningDisposition": "2个已授权SF系统字体回退；1个已被当前规则覆盖的旧宽度。未重扫。"
+    }
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "通过底色与文字颜色表达动作层级。",
+      "html": "<button type=\"button\" class=\"ds-btn-primary\">开始第一课</button>",
+      "css": ".ds-btn-primary{font-family:var(--font,-apple-system, BlinkMacSystemFont, \"SF Pro Display\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif);display:inline-flex;justify-content:center;align-items:center;gap:8px;border:1px solid transparent;border-radius:999px;padding:10px 20px;min-height:44px;line-height:1.5;font-size:14px;font-weight:400;text-decoration:none;white-space:normal;text-align:center;cursor:pointer;transition:background 200ms ease,color 200ms ease,border-color 200ms ease,transform 200ms ease;background:var(--blue,#0071e3);color:#fff;}.ds-btn-primary:hover{background:var(--blue-hover,#0062c4);color:#fff;}.ds-btn-primary:focus-visible{outline:3px solid #0071e3;outline-offset:4px;}.ds-btn-primary:disabled{cursor:not-allowed;opacity:.5}@media(prefers-reduced-motion:reduce){.ds-btn-primary{transition-duration:.01ms!important}}"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "通过底色与文字颜色表达动作层级。",
+      "html": "<button type=\"button\" class=\"ds-btn-secondary\">重做知识题</button>",
+      "css": ".ds-btn-secondary{font-family:var(--font,-apple-system, BlinkMacSystemFont, \"SF Pro Display\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif);display:inline-flex;justify-content:center;align-items:center;gap:8px;border:1px solid transparent;border-radius:999px;padding:10px 20px;min-height:44px;line-height:1.5;font-size:14px;font-weight:400;text-decoration:none;white-space:normal;text-align:center;cursor:pointer;transition:background 200ms ease,color 200ms ease,border-color 200ms ease,transform 200ms ease;background:transparent;border-color:#bcbcc1;color:var(--ink,#1d1d1f);}.ds-btn-secondary:hover{background:#f5f5f7;border-color:#86868b;color:var(--ink,#1d1d1f);}.ds-btn-secondary:focus-visible{outline:3px solid #0071e3;outline-offset:4px;}.ds-btn-secondary:disabled{cursor:not-allowed;opacity:.5}@media(prefers-reduced-motion:reduce){.ds-btn-secondary{transition-duration:.01ms!important}}"
+    },
+    {
+      "name": "Ghost / Return Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "实际按钮变体；返回按钮保留44px最小高度。",
+      "html": "<button type=\"button\" class=\"ds-btn-ghost\">返回闯关路线</button>",
+      "css": ".ds-btn-ghost{font-family:var(--font,-apple-system, BlinkMacSystemFont, \"SF Pro Display\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif);display:inline-flex;justify-content:center;align-items:center;gap:8px;border:1px solid transparent;border-radius:999px;padding:10px 20px;min-height:44px;line-height:1.5;font-size:14px;font-weight:400;text-decoration:none;white-space:normal;text-align:center;cursor:pointer;transition:background 200ms ease,color 200ms ease,border-color 200ms ease,transform 200ms ease;background:transparent;color:#0066cc;min-height:44px;}.ds-btn-ghost:hover{background:var(--blue-soft,#e8f1fb);color:#004f9e;}.ds-btn-ghost:focus-visible{outline:3px solid #0071e3;outline-offset:4px;}.ds-btn-ghost:disabled{cursor:not-allowed;opacity:.5}@media(prefers-reduced-motion:reduce){.ds-btn-ghost{transition-duration:.01ms!important}}.ds-btn-ghost:hover{text-decoration:underline;text-underline-offset:3px}"
+    },
+    {
+      "name": "Light Secondary Button",
+      "kind": "button",
+      "refersTo": "button-light",
+      "description": "旧light按钮沿用白底深字灰边，不再依赖深色推荐横幅。",
+      "html": "<div class=\"ds-banner-sample\"><button type=\"button\" class=\"ds-btn-light\">继续学习</button></div>",
+      "css": ".ds-btn-light{font-family:var(--font,-apple-system, BlinkMacSystemFont, \"SF Pro Display\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif);display:inline-flex;justify-content:center;align-items:center;gap:8px;border:1px solid transparent;border-radius:999px;padding:10px 20px;min-height:44px;line-height:1.5;font-size:14px;font-weight:400;text-decoration:none;white-space:normal;text-align:center;cursor:pointer;transition:background 200ms ease,color 200ms ease,border-color 200ms ease,transform 200ms ease;background:#fff;border-color:#bcbcc1;color:var(--ink,#1d1d1f);}.ds-btn-light:hover{background:#f5f5f7;color:var(--ink,#1d1d1f);}.ds-btn-light:focus-visible{outline:3px solid #0071e3;outline-offset:4px;}.ds-btn-light:disabled{cursor:not-allowed;opacity:.5}@media(prefers-reduced-motion:reduce){.ds-btn-light{transition-duration:.01ms!important}}.ds-banner-sample{background:var(--surface,#fff);padding:20px;border-radius:24px;}"
+    },
+    {
+      "name": "Notes Textarea",
+      "kind": "input",
+      "refersTo": "notes-textarea",
+      "description": "独立文字标签与可垂直调整的笔记区。",
+      "html": "<label class=\"ds-notes-label\" for=\"ds-notes\">记录你的成果或卡点</label><textarea class=\"ds-notes\" id=\"ds-notes\" rows=\"5\" placeholder=\"例如：我做出了什么、结果是什么、还卡在哪一步……\"></textarea>",
+      "css": ".ds-notes-label{font-family:var(--font,-apple-system, BlinkMacSystemFont, \"SF Pro Display\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif);display:block;margin:20px 0 8px;font-size:16px;font-weight:600;color:var(--ink,#1d1d1f);line-height:1.7}.ds-notes{font-family:var(--font,-apple-system, BlinkMacSystemFont, \"SF Pro Display\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif);display:block;resize:vertical;width:100%;min-height:130px;border:1px solid #bcbcc1;border-radius:12px;background:#fff;color:var(--ink,#1d1d1f);padding:12px 14px;font-size:16px;line-height:1.8;caret-color:var(--blue,#0071e3)}.ds-notes::placeholder{color:var(--muted,#626267);opacity:1}.ds-notes:hover{border-color:#8aa6bd}.ds-notes:focus-visible{outline:3px solid #0071e3;outline-offset:3px}"
+    },
+    {
+      "name": "Search Field",
+      "kind": "input",
+      "refersTo": "search-field",
+      "description": "概念速查的单行搜索输入。",
+      "html": "<input class=\"ds-search\" type=\"search\" aria-label=\"搜索概念\" placeholder=\"搜索概念\">",
+      "css": ".ds-search{font-family:var(--font,-apple-system, BlinkMacSystemFont, \"SF Pro Display\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif);width:100%;max-width:600px;min-width:0;padding:12px 14px;border:1px solid #bcbcc1;border-radius:12px;background:#fff;color:var(--ink,#1d1d1f);font-size:16px;line-height:1.8;min-height:48px;caret-color:var(--blue,#0071e3)}.ds-search::placeholder{color:var(--muted,#626267);opacity:1}.ds-search:focus-visible{outline:3px solid #0071e3;outline-offset:4px;}@media(max-width:650px){.ds-search{min-height:44px}}"
+    },
+    {
+      "name": "Desktop Navigation",
+      "kind": "nav",
+      "refersTo": "navigation-item",
+      "description": "深蓝侧栏内的默认和当前导航项。",
+      "html": "<nav class=\"ds-nav\" aria-label=\"学习导航\"><button type=\"button\" aria-current=\"page\"><svg class=\"ds-nav-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z\"/></svg>学习桌面</button><button type=\"button\">我的项目</button></nav>",
+      "css": ".ds-nav{display:grid;gap:7px;background:var(--surface,#fff);padding:18px}.ds-nav button{font-family:var(--font,-apple-system, BlinkMacSystemFont, \"SF Pro Display\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif);width:100%;border:0;background:transparent;color:#515156;display:flex;align-items:center;gap:12px;text-align:left;padding:12px 15px;border-radius:12px;min-height:46px;font-size:14px;line-height:1.7;cursor:pointer}.ds-nav button:hover{background:#f5f5f7;color:var(--ink,#1d1d1f)}.ds-nav button[aria-current=page]{background:var(--blue-soft,#e8f1fb);color:#005dbb}.ds-nav button:focus-visible{outline:3px solid #0071e3;outline-offset:4px;}.ds-nav-icon{width:19px;height:19px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:1.65;stroke-linecap:round;stroke-linejoin:round}"
+    },
+    {
+      "name": "Self-check Status",
+      "kind": "chip",
+      "refersTo": "status-chip",
+      "description": "状态文字说明自查已完成，仍等待教师验收。",
+      "html": "<span class=\"ds-chip\">已自查，待老师验收</span>",
+      "css": ".ds-chip{font-family:var(--font,-apple-system, BlinkMacSystemFont, \"SF Pro Display\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif);display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:500;line-height:1.6;padding:5px 9px;border-radius:8px;background:var(--success-bg,#e8f4ef);color:#236b5b;white-space:nowrap}"
+    },
+    {
+      "name": "Course List Row",
+      "kind": "custom",
+      "refersTo": "course-list-row",
+      "description": "连续白色学习面板内的课程入口；不把每节课做成独立卡片。",
+      "html": "<section class=\"ds-course-panel\" aria-label=\"课程列表\"><button type=\"button\" class=\"ds-course-row\"><span class=\"ds-course-number\">01</span><span class=\"ds-course-info\"><span class=\"ds-course-title\">先认识你的项目</span><span class=\"ds-course-meta\">从零开始 · 阅读与动手</span></span><span class=\"ds-course-status\">去学习</span></button><button type=\"button\" class=\"ds-course-row\"><span class=\"ds-course-number\">02</span><span class=\"ds-course-info\"><span class=\"ds-course-title\">记录你的第一份成果</span><span class=\"ds-course-meta\">自查后记录进度</span></span><span class=\"ds-course-status\">去学习</span></button></section>",
+      "css": ".ds-course-panel{background:var(--surface,#fff);border:1px solid var(--line,#d2d2d7);border-radius:24px;overflow:hidden;padding:0 23px}.ds-course-row{font-family:var(--font,-apple-system, BlinkMacSystemFont, \"SF Pro Display\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif);width:100%;border:0;border-top:1px solid #e8edf3;background:transparent;text-align:left;color:var(--ink,#1d1d1f);display:flex;align-items:center;gap:13px;padding:13px 0;min-width:0;cursor:pointer}.ds-course-row:first-child{border-top:0}.ds-course-row:hover{background:var(--page,#f5f5f7)}.ds-course-row:hover .ds-course-title{color:var(--blue,#0071e3);text-decoration:underline;text-underline-offset:4px}.ds-course-row:focus-visible{outline:3px solid #0071e3;outline-offset:4px;}.ds-course-number{flex:0 0 25px;font-size:11px;color:#7b8b9b;font-variant-numeric:tabular-nums}.ds-course-info{flex:1;min-width:0}.ds-course-title{display:block;font-size:14px;font-weight:500;line-height:1.7}.ds-course-meta{display:block;font-size:12px;color:var(--muted,#626267);margin-top:2px;line-height:1.7}.ds-course-status{flex-shrink:0;font-size:11px;color:#708194}"
+    },
+    {
+      "name": "Supporting Panel",
+      "kind": "card",
+      "refersTo": "side-panel",
+      "description": "平面白色容器，用于学习说明。",
+      "html": "<aside class=\"ds-panel\"><h2>怎样才算学会</h2><p>能自己运行，并核对真实结果。能解释关键步骤的用途。</p></aside>",
+      "css": ".ds-panel{font-family:var(--font,-apple-system, BlinkMacSystemFont, \"SF Pro Display\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif);background:var(--surface,#fff);border:1px solid var(--line,#d2d2d7);border-radius:24px;padding:28px;color:var(--ink,#1d1d1f)}.ds-panel h2{font-size:23px;line-height:1.5;color:var(--ink,#1d1d1f);margin:0 0 13px;font-weight:600}.ds-panel p{font-size:15px;color:var(--muted,#626267);line-height:1.9;margin:0}"
+    },
+    {
+      "name": "Knowledge Explanation",
+      "kind": "custom",
+      "description": "“先弄明白”中的连续知识讲解与官方资料链接；复用现有阅读字体、正文和分隔线。",
+      "html": "<div class=\"ds-knowledge\"><section class=\"ds-knowledge-section\"><h3>先理解输入、处理与输出</h3><p>把一份资料交给程序是输入，按步骤整理资料是处理，得到可检查的结果是输出。</p><p>动手前先说清每一步的用途，再用实际结果检查自己的理解。</p></section><p class=\"ds-knowledge-sources\">对照官方资料：<a href=\"https://docs.python.org/zh-cn/3/tutorial/\" target=\"_blank\" rel=\"noopener noreferrer\">Python 官方教程</a></p></div>",
+      "css": ".ds-knowledge{font-family:var(--font,-apple-system, BlinkMacSystemFont, \"SF Pro Display\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif);font-size:17px;line-height:1.95;color:var(--ink,#1d1d1f)}.ds-knowledge-section{margin-top:26px;padding-top:24px;border-top:1px solid var(--line,#d2d2d7)}.ds-knowledge-section h3{font-size:19px;font-weight:600;color:var(--ink,#1d1d1f);margin:0 0 12px;line-height:1.65}.ds-knowledge-section p{max-width:72ch;margin:0 0 12px;overflow-wrap:anywhere}.ds-knowledge-section p:last-child{margin-bottom:0}.ds-knowledge-sources{font-size:13px;color:var(--muted,#626267);line-height:1.9;margin:28px 0 0;overflow-wrap:anywhere}.ds-knowledge a{color:var(--blue,#0071e3);text-decoration-thickness:1px;text-underline-offset:3px}.ds-knowledge a:hover{color:var(--blue-hover,#0062c4)}.ds-knowledge a:focus-visible{outline:3px solid #0071e3;outline-offset:4px}@media(max-width:650px){.ds-knowledge{font-size:16px}}"
+    },
+    {
+      "name": "AI Capability Staircase",
+      "kind": "custom",
+      "description": "课程自定义六级能力规划图；统一节点色，不表示官方评级或自动认证。",
+      "html": "<section class=\"ds-level-overview\"><h2>AI 运用等级图</h2><svg class=\"ds-level-diagram ds-level-desktop\" viewBox=\"0 0 1080 300\" role=\"img\" aria-label=\"AI运用六级成长路线：会提问、会核验、会搭流程、会接资料工具、会做Agent、会独立交付\"><path class=\"ds-level-path\" d=\"M70 240 H252 V205 H434 V170 H616 V135 H798 V100 H980 V65\"/><g><circle class=\"ds-level-node\" cx=\"70\" cy=\"240\" r=\"22\"/><text class=\"ds-level-label\" x=\"70\" y=\"244\">L1</text><text class=\"ds-level-title\" x=\"70\" y=\"204\">会提问</text></g><g><circle class=\"ds-level-node\" cx=\"252\" cy=\"205\" r=\"22\"/><text class=\"ds-level-label\" x=\"252\" y=\"209\">L2</text><text class=\"ds-level-title\" x=\"252\" y=\"169\">会核验</text></g><g><circle class=\"ds-level-node\" cx=\"434\" cy=\"170\" r=\"22\"/><text class=\"ds-level-label\" x=\"434\" y=\"174\">L3</text><text class=\"ds-level-title\" x=\"434\" y=\"134\">会搭流程</text></g><g><circle class=\"ds-level-node\" cx=\"616\" cy=\"135\" r=\"22\"/><text class=\"ds-level-label\" x=\"616\" y=\"139\">L4</text><text class=\"ds-level-title\" x=\"616\" y=\"99\">会接资料工具</text></g><g><circle class=\"ds-level-node\" cx=\"798\" cy=\"100\" r=\"22\"/><text class=\"ds-level-label\" x=\"798\" y=\"104\">L5</text><text class=\"ds-level-title\" x=\"798\" y=\"64\">会做Agent</text></g><g><circle class=\"ds-level-node\" cx=\"980\" cy=\"65\" r=\"22\"/><text class=\"ds-level-label\" x=\"980\" y=\"69\">L6</text><text class=\"ds-level-title\" x=\"980\" y=\"29\">会独立交付</text></g></svg><svg class=\"ds-level-diagram ds-level-mobile\" viewBox=\"0 0 380 380\" role=\"img\" aria-label=\"AI运用六级成长路线：会提问、会核验、会搭流程、会接资料工具、会做Agent、会独立交付\"><path class=\"ds-level-path\" d=\"M30 310 H92 V263 H154 V216 H216 V169 H278 V122 H340 V75\"/><g><circle class=\"ds-level-node\" cx=\"30\" cy=\"310\" r=\"17\"/><text class=\"ds-level-label\" x=\"30\" y=\"314\">L1</text><text class=\"ds-level-title\" x=\"30\" y=\"279\">会提问</text></g><g><circle class=\"ds-level-node\" cx=\"92\" cy=\"263\" r=\"17\"/><text class=\"ds-level-label\" x=\"92\" y=\"267\">L2</text><text class=\"ds-level-title\" x=\"92\" y=\"232\">会核验</text></g><g><circle class=\"ds-level-node\" cx=\"154\" cy=\"216\" r=\"17\"/><text class=\"ds-level-label\" x=\"154\" y=\"220\">L3</text><text class=\"ds-level-title\" x=\"154\" y=\"185\">会搭流程</text></g><g><circle class=\"ds-level-node\" cx=\"216\" cy=\"169\" r=\"17\"/><text class=\"ds-level-label\" x=\"216\" y=\"173\">L4</text><text class=\"ds-level-title\" x=\"216\" y=\"138\">会接资料工具</text></g><g><circle class=\"ds-level-node\" cx=\"278\" cy=\"122\" r=\"17\"/><text class=\"ds-level-label\" x=\"278\" y=\"126\">L5</text><text class=\"ds-level-title\" x=\"278\" y=\"91\">会做Agent</text></g><g><circle class=\"ds-level-node\" cx=\"340\" cy=\"75\" r=\"17\"/><text class=\"ds-level-label\" x=\"340\" y=\"79\">L6</text><text class=\"ds-level-title\" x=\"340\" y=\"44\">会独立交付</text></g></svg><p>学习记录来自自查；等级以实际成果验收，不会根据勾选进度自动认证。</p></section>",
+      "css": ".ds-level-overview{font-family:var(--font,-apple-system, BlinkMacSystemFont, \"SF Pro Display\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif);background:var(--surface,#fff);border:1px solid var(--line,#d2d2d7);border-radius:24px;padding:28px 30px;color:var(--ink,#1d1d1f)}.ds-level-overview h2{font-size:23px;margin:0 0 12px}.ds-level-overview p{max-width:72ch;color:var(--muted,#626267);font-size:15px;line-height:1.7}.ds-level-diagram{display:block;width:100%;height:auto;margin:8px 0 12px;overflow:visible}.ds-level-mobile{display:none}.ds-level-path{fill:none;stroke:var(--line,#d2d2d7);stroke-width:3;stroke-linejoin:round}.ds-level-node{fill:var(--ink,#1d1d1f)}.ds-level-label{fill:var(--surface,#fff);font-size:13px;font-weight:600;text-anchor:middle}.ds-level-title{fill:var(--ink,#1d1d1f);font-size:17px;font-weight:600;text-anchor:middle}@media(max-width:650px){.ds-level-overview{padding:23px 21px}.ds-level-overview h2{font-size:19px}.ds-level-desktop{display:none}.ds-level-mobile{display:block}.ds-level-mobile .ds-level-title{font-size:16px}.ds-level-mobile .ds-level-label{font-size:11px}}"
+    },
+    {
+      "name": "Level Evidence Row",
+      "kind": "custom",
+      "description": "能力详情按原生details按需展开；不是自动能力认证。",
+      "html": "<ol class=\"ds-level-list\"><li class=\"ds-level-row\"><details class=\"ds-capability\"><summary><span class=\"ds-level-badge\">L1</span><h3>会提问</h3><span aria-hidden=\"true\">⌄</span></summary><div class=\"ds-level-detail\"><p>把目标、材料、限制和输出格式说明白。</p><dl><dt>代表作品</dt><dd>可复用提示词与真实输出。</dd><dt>验收重点</dt><dd>换个同类问题仍能完成。</dd></dl><a class=\"ds-level-link\" href=\"#lesson/s1-l1\">学习这一级</a></div></details></li></ol>",
+      "css": ".ds-level-list{font-family:var(--font,-apple-system, BlinkMacSystemFont, \"SF Pro Display\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif);list-style:none;padding:0;margin:24px 0 0;background:var(--surface,#fff);color:var(--ink,#1d1d1f);border-radius:24px;overflow:hidden}.ds-level-row{padding:0 28px;border-bottom:1px solid #e5e5e8}.ds-capability>summary{display:flex;align-items:center;gap:16px;min-height:88px;padding:18px 0;list-style:none;cursor:pointer}.ds-capability h3{font-size:19px;font-weight:500;flex:1;margin:0}.ds-level-badge{display:flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:12px;background:#f0f0f3;font-size:14px}.ds-level-detail{padding:4px 0 28px 58px;font-size:16px;line-height:1.85}.ds-level-detail dd{margin:0 0 12px;color:var(--muted,#626267)}.ds-level-link{display:inline-flex;align-items:center;min-height:44px;padding:10px 20px;border:1px solid #bcbcc1;border-radius:999px;color:var(--ink,#1d1d1f);text-decoration:none;font-size:14px;transition:background 200ms ease}.ds-level-link:hover{background:#f5f5f7}.ds-capability summary:focus-visible,.ds-level-link:focus-visible{outline:3px solid var(--blue,#0071e3);outline-offset:4px}@media(max-width:650px){.ds-level-row{padding:0 24px}.ds-capability h3{font-size:18px}.ds-level-detail{padding-left:0}}@media(prefers-reduced-motion:reduce){.ds-level-link{transition:none}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "课程实践工作台",
+    "overview": "以持续的学习路径为骨架，以当次可执行任务为中心。第五轮明确将当前学习桌面的白色侧栏、浅灰页面、白色卡片、深色文字、系统字体和行动蓝推广为所有学习路由的共同基础。沿用已确认的视觉世界，不另起设计。\n\n操作区紧凑，正文区舒展。完成、自查、知识题反馈和待核验状态始终配合文字；本地学习记录不暗示云同步、教师评分或能力认证。",
+    "keyCharacteristics": [
+      "所有学习路由共用白色导航、浅灰底与白色内容面。",
+      "连续课程列表、清晰阅读层级与大圆角平面容器。",
+      "少量行动蓝、诚实语义状态色与可见键盘焦点。",
+      "系统字体、本机回退、阅读正文宽松行距。"
+    ],
+    "rules": [],
+    "dos": [
+      "**Do** 在所有学习路由复用白导航、浅灰底、白内容面、系统字体与行动蓝。",
+      "**Do** 保留可见键盘焦点、原生语义、真实当前导航与本地保存/导出说明。",
+      "**Do** 用文字区分已回答、已提交、知识答对、自查完成与待核验。",
+      "**Do** 保留课程、实操、独立换题、反馈及选修/拓展的原记录边界。"
+    ],
+    "donts": [
+      "**Don't** 恢复海军蓝侧栏或将已撤销的路由限制作为当前默认。",
+      "**Don't** 把知识题成绩、自查、字段完整或文字方案表示为实操认证。",
+      "**Don't** 添加账号、云同步、模型评分、外部字体或额外动效体系。",
+      "**Don't** 用装饰卡片、游戏奖励或常驻阴影替代阅读与实际任务。"
+    ]
+  }
+}
