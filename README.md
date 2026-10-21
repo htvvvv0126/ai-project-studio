@@ -1,5 +1,15 @@
 # AI 项目学习台
 
+## [▶ 打开 AI Project Studio 工作台](https://ai-project-studio-7b26.swiftbook4.chatgpt.site/)
+
+**在线网址：[https://ai-project-studio-7b26.swiftbook4.chatgpt.site/](https://ai-project-studio-7b26.swiftbook4.chatgpt.site/)**
+
+无需下载代码。打开后点击「以游客身份继续」，进入 AI 运用等级图，开始学习。
+
+学习记录保存在当前浏览器；换设备前请在工作台导出记录备份。
+
+---
+
 开发前先阅读 [AGENTS.md](AGENTS.md) 中的执行约束与 [docs/PRODUCT_PRINCIPLES.md](docs/PRODUCT_PRINCIPLES.md) 中的完整产品原则；现有实现边界见 [PRODUCT.md](PRODUCT.md)，视觉规范见 [DESIGN.md](DESIGN.md)。
 
 给普通零基础用户使用的中文AI实用课程。新主线为六阶段15课必修：认识AI、沟通、核验、工具、真实项目、多步骤与Agent使用。第七阶段个人AI工作系统2课为选修；原七关22课资料问答Agent开发路线完整保留在编程拓展，不要求所有人学习Python。
