@@ -1,5 +1,7 @@
 # AI 项目学习台
 
+开发前先阅读 [AGENTS.md](AGENTS.md) 中的执行约束与 [docs/PRODUCT_PRINCIPLES.md](docs/PRODUCT_PRINCIPLES.md) 中的完整产品原则；现有实现边界见 [PRODUCT.md](PRODUCT.md)，视觉规范见 [DESIGN.md](DESIGN.md)。
+
 给普通零基础用户使用的中文AI实用课程。新主线为六阶段15课必修：认识AI、沟通、核验、工具、真实项目、多步骤与Agent使用。第七阶段个人AI工作系统2课为选修；原七关22课资料问答Agent开发路线完整保留在编程拓展，不要求所有人学习Python。
 
 “AI运用等级图”用六级能力说明会选任务、会表达、会核验、会用工具、会做项目和会管流程，每一级对应作品与验收重点。这是本课程的能力规划，不是官方评级，也不会根据完成勾选自动授予等级。

@@ -2,6 +2,10 @@
 
 <!-- impeccable:product-schema 1 -->
 
+## 产品规范入口与文档分工
+
+完整产品定位、目标用户、六项原则、课程设计标准和长期发展方向统一见 [docs/PRODUCT_PRINCIPLES.md](docs/PRODUCT_PRINCIPLES.md)；开发必须遵守的约束见 [AGENTS.md](AGENTS.md)。本文继续保留现有实现边界与历次决策，不重复维护长期路线图。下文各轮次是历史记录；阶段性范围以明确标注的后续覆盖规则为准，例如第五轮全站视觉规则已取代早期仅部分页面浅色的限制。未来规划不表示功能已经上线，也不授权自动实施。
+
 ## Platform
 
 web
