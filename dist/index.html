@@ -2223,7 +2223,7 @@ window.COURSE_DATA = {
           "explanation": "角色设定不增加真实权限，也不保证准确。"
         }
       ],
-      "task": "从‘帮我安排一次家庭聚会’开始，使用这份虚构条件：6名成年人、周日下午两小时、室内、只讨论活动安排、不安排采购、未确定具体地点。先让AI出初稿，再补充你自己的两个偏好，至少进行一次针对具体问题的追问。交付最终安排、前后两版、修改理由和仍待确认事项。不编造已订场地或已购买物品。",
+      "task": "从‘帮我安排一次家庭聚会’开始，使用这份虚构条件：6名成年人、周日下午两小时、室内、只讨论活动安排、不安排采购、未确定具体地点。先让AI出初稿，再补充你自己的两个偏好，至少进行一次针对具体问题的追问。交付以下七项：①原始任务说明；②AI第一次生成的草稿；③自己增加的两个偏好；④针对问题提出的具体追问；⑤修改后的最终安排；⑥前后版本的变化、修改理由与核查结果；⑦仍需确认或尚未实际执行的事项。不编造已订场地或已购买物品。",
       "checks": [
         "最终说明包含目标、必要背景、限制、偏好和输出形式，缺失地点明确待确认",
         "保存初稿与修订稿，指出一项具体问题及对应改善",
@@ -2676,10 +2676,10 @@ window.COURSE_DATA = {
           }
         ],
         "steps": [
-          "保存示例为CSV或复制进表格；确认A至C列分别为品名、数量、单价，第1行为表头，第2至5行为数据。保留原始副本。",
+          "保存示例为CSV，再粘贴或导入表格；确认A、B、C三列分别为品名、数量、单价，第1行为表头，第2至5行为数据。如果内容仍集中在一列，使用所选软件的导入或分列功能，按逗号分开；确认数量和单价是可以计算的数值。保留原始CSV作为输入副本。",
           "请AI建议D2的金额公式与D6合计公式，在电子表格实际输入＝B2*C2并填充至D5，在D6输入＝SUM(D2:D5)。实际输入使用英文半角等号，菜单或参数格式不同按当前软件处理。",
           "不用AI先手算前两行，再核对四行金额24、15、36、7和合计82。故意将合计范围改为D2:D4，确认变成75，修回后复查。",
-          "交付可打开的表格、实际公式和核对记录，另让AI用两句说明结果及样本局限。有分析功能时可再生成图表，检查柱值与单位。"
+          "将带公式的计算成果另存为支持公式的工作簿，重新打开确认公式和合计仍然正确。交付可打开的工作簿、实际公式和核对记录，另让AI用两句说明结果及样本局限。有分析功能时可再生成图表，检查柱值与单位。"
         ],
         "example": {
           "label": "虚构小店四条练习记录（CSV）",
@@ -2800,7 +2800,7 @@ window.COURSE_DATA = {
           "explanation": "免费与低成本入口优先；功能受当前工具和账户限制，脚本不能证明生成能力。"
         }
       ],
-      "task": "用至少两类实际可用工具完成虚构活动“周末阅读会”的准备包：材料为周日14:00—15:30、16人、场地一楼阅读区；采购笔记本4本每本12元、笔6支每支3元。必须交付实际计算的预算表（合计66元），再从可打开通知/PPT、真实图片、真实语音三类中任选一类实际产物。提交原材料、工具与实际操作记录、核对表和一处修正。两类工具可以来自同一产品的不同实际功能；聊天输出两段文本不算两类工具。有功能缺口就记待练，不把该缺口包装成通过，也不要求购买工具。",
+      "task": "用至少两类实际可用工具完成虚构活动“周末阅读会”的准备包：材料为周日14:00—15:30、16人、场地一楼阅读区；采购笔记本4本每本12元、笔6支每支3元。必须交付实际计算的预算表（合计66元），再从可打开通知/PPT、真实图片、真实语音三类中任选一类实际产物。提交原材料、工具与实际操作记录和核对表；记录发现的一处问题、具体修正及修改后的实际结果，重新检查修正结果和原本正确的要求；未执行或无法验证的部分保留待练。独立换题或额外变更为可选练习，不是本阶段任务的强制要求。两类工具可以来自同一产品的不同实际功能；聊天输出两段文本不算两类工具。有功能缺口就记待练，不把该缺口包装成通过，也不要求购买工具。",
       "checks": [
         "至少两类实际功能有可检查产物，表格实际运行且预算66元核对正确",
         "第二类产物按真实文件、真实图片或真实语音各自标准验收，人工制作路径写明",
@@ -2919,7 +2919,7 @@ window.COURSE_DATA = {
           "选一个你本周会实际使用的小项目，自己写四句任务单：使用者是谁、现有材料、限制、怎样才算完成。只提交脱敏材料。",
           "自行选择现有工具并执行，保存关键输入和真实输出；每个需要事实或计算的位置由你核对。不要让AI替你补写未提供的个人状态。",
           "遇到失败时先写“预期／实际／证据／最可能原因”，用小样本验证一个修复。没有自然错误就在副本中加入一个错数字或漏项，记录为人为测试，修复后复验。",
-          "实际使用一次最终产物，交付任务单、成品、核对和失败修复记录；仍有缺口就说明对使用的影响。未获确认不发送、不发布、不付款。"
+          "实际使用一次最终产物，交付任务单、成品、核对和失败修复记录；仍有缺口就说明对使用的影响。未获确认不发送、不发布、不付款。最后在现有成果记录中简短回顾：以前不用AI会怎样做？这次AI减少了哪些重复工作？核对结果和修改错误又增加了哪些工作？综合成果质量和投入，下次还值得这样用AI吗，为什么？不要求精确计时，没有记录的耗时写“未知”，不编造节省时间或效率提升百分比；这是你对本次做法的判断，不是客观效率认证。"
         ],
         "example": {
           "label": "只示范验收写法，不提供你的独立项目答案",
@@ -3540,11 +3540,11 @@ window.COURSE_DATA = {
 (() => {
   const rubrics = {
     core1: { artifact: '五行用法表：问题、工具、输入、检查、是否实测。', evidence: ['逐行说明为什么选这类能力；不能只填品牌名。', '指出哪项需要当前来源、原文或专业人员；保留对应依据。', '举出生成建议与实际操作的区别；没操作的明确标注。'], next: '补完五行用法表，再找一个你真实用过的例子。' },
-    core2: { artifact: '原任务说明、AI初稿、具体追问、修订稿与未确定事项。', evidence: ['指出目标、背景和限制分别写在哪里；地点未定就保留待确认。', '贴出一处修改前后差异及对应追问，说明修复了什么。', '逐项对照原条件；不能把活动计划写成已预订或已采购。'], next: '选一个具体漏项再追问，比较前后两版。' },
-    core3: { artifact: '错误清单、原文依据、修正版与复验结果。', evidence: ['给出至少两处原文与说法对照，说明日期和适用对象。', '列出修正前后差异，检查没有改坏其他正确项。', '用实际文件、打开结果或操作状态证明完成；未做的单列。'], next: '把一个争议说法拆成事实，再回到原文逐条核对。' },
-    core4: { artifact: '两类工具的真实成品或可检查摘录、核对记录与独立变更结果。', evidence: ['分别写明用了哪两类工具及其真实返回；手工制作单列。', '写出至少三项核对：原文/公式/文件打开/图像细节/声音原音。', '记录一个新要求、实际修订结果和复验；缺少的能力继续待练。'], next: '先补缺少的真实工具结果，再按原材料检查一次。' },
+    core2: { artifact: '①原始任务说明；②AI第一次生成的草稿；③自己增加的两个偏好；④针对问题提出的具体追问；⑤修改后的最终安排；⑥前后版本的变化、修改理由与核查结果；⑦仍需确认或尚未实际执行的事项。', evidence: ['指出目标、背景和限制分别写在哪里；地点未定就保留待确认。', '贴出一处修改前后差异及对应追问，说明修复了什么。', '逐项对照原条件；不能把活动计划写成已预订或已采购。'], next: '选一个具体漏项再追问，比较前后两版。' },
+    core3: { artifact: '错误清单、原文依据、修正版与复验结果。', evidence: ['给出至少两处原文与说法对照，说明日期和适用对象。', '说明删减了哪些不必要的个人信息及原因；列出素材、用途或授权待核查项，以及健康、合同等问题需哪些专业人员核验、谁作最终判断；对比风险处理前后的变化，复查其他正确内容。', '用实际文件、打开结果或操作状态证明完成；未做的单列。'], next: '把一个争议说法拆成事实，再回到原文逐条核对。' },
+    core4: { artifact: '两类工具的真实成品或可检查摘录、核对记录，以及发现的一处问题、具体修正、修改后的实际结果与复验记录；未执行或无法验证的部分保留待练。独立换题或额外变更为可选练习，不是本阶段任务的强制要求。', evidence: ['分别写明用了哪两类工具及其真实返回；手工制作单列。', '写出至少三项核对：原文/公式/文件打开/图像细节/声音原音。', '记录发现的一处问题、具体修正及修改后的实际结果，重新检查修正结果和原本正确的要求；未执行或无法验证的部分保留待练。'], next: '先补缺少的真实工具结果，再按原材料检查一次。' },
     core5: { artifact: '自己的真实项目任务单、成品、三项核对、失败修复与实际使用结果。', evidence: ['说明谁会用、验收标准及成品实际如何使用；虚构项目仅为预练。', '列出三项可追溯核对和一次失败→修改→复验。', '说明AI协助、人工执行、未完成项及其影响。'], next: '请使用者走查成品，修复首个实际问题后再提交。' },
-    core6: { artifact: '至少三步流程产物、执行者、真实工具返回与恢复记录。', evidence: ['每一步写明输入、实际输出和检查点，人工与AI执行分开。', '贴可核对的真实工具返回及一次失败/未知处理；文本日志不能替代返回。', '写出停止与确认点；没有工具入口时只提交预练，不冒充Agent调用。'], next: '回到最后一个已核对的步骤，小范围重跑并保留对应返回。' },
+    core6: { artifact: '至少三步流程产物、执行者、真实工具返回与恢复记录。', evidence: ['每一步写明输入、实际输出和检查点，人工与AI执行分开。', '贴可核对的真实工具返回及一次失败/未知处理；文本日志不能替代返回。', '写出停止与确认点；没有工具入口时只提交预练，不冒充Agent调用。'], next: '先检查当前实际状态和最后一次成功的返回，保留已经完成的部分。对于结果不明的写入操作，先到目标位置核实，避免重复发送、创建或付款。确认哪些步骤确实受到影响后，只从必要的位置继续，并重新检查结果。无法确认时暂停，记录待处理事项。' },
     core7: { artifact: '可复用方法、两组新材料的真实成果、失败处理与维护日期。', evidence: ['同一方法在两组输入上实际运行；分别给出产物与核对。', '记录一次缺信息、失败或冲突的处理及下次维护日期。', '手动、检索、Skill加载、连接与自动化分别提供实际证据，未测的不宣称。'], next: '换第二组材料运行，并检查缺输入时能否停下。' }
   };
   const tools = [
@@ -4090,7 +4090,23 @@ window.COURSE_DATA = {
     return `<details class="prerequisite"><summary>${p.lessons.length?'推荐基础，可随时补学或跳过':'无需基础，直接开始'}</summary>${p.lessons.length?`<p>如果下面的内容还陌生，先回看；跳过不会记为已掌握。</p><div class="related-lessons">${p.lessons.map(id=>{const x=lessons.find(x=>x.id===id);return button(x.title+' · '+(completed(id)?'已自查':'可补学'),'lesson/'+id,'btn-ghost');}).join('')}</div>`:''}<div class="related-lessons">${p.concepts.map(term=>button('查：'+term,'glossary/'+encodeURIComponent(term),'btn-ghost')).join('')}</div></details>`;
   }
   function firstTask() {
-    return `<section class="lesson-section quick-start" id="firstTask"><h2>先做一件有用的小事 · 约10分钟</h2><p>AI可以按你给的材料整理、起草和修改。先用一个真实聊天工具，把通知变成行动清单，再亲手核对。不会的词稍后再查。</p>${button('没有聊天工具？查看可用入口','resources/chat','btn-secondary')}<ol class="step-list"><li>用你能打开的文字AI工具，新建一次对话；没有入口时可先阅读，真实操作保持待练。</li><li>复制下面的虚构通知与指令，亲自发给AI（约2分钟）。</li><li>对照原通知查时间、地点和待确认项。再发追问，看看改后的清单是否更好用（约3分钟）。</li><li>换一段你自己的非敏感通知或小任务，自己提问、修一次并核对（约3分钟）。</li><li>在下方留下前后结果与核对，保存第一个作品（约2分钟）。</li></ol>${copyBlock('第一条提问（虚构教学通知）',S.firstPrompt,'first')}${copyBlock('再追问一次',S.firstFollowup,'followup')}<p><strong>完成标准：</strong>实际发出提问与追问；时间地点保留正确；报名仍为待确认；换题后也能留下可用清单。建议用时不含注册、网络等待。</p><label for="firstMode">这次做到哪一步？</label><select id="firstMode" data-first-field="mode"><option value="preparation" ${learning.first.mode!=='actual'?'selected':''}>只做准备，尚未实际使用AI</option><option value="actual" ${learning.first.mode==='actual'?'selected':''}>已实际提问、追问并核对</option></select><label class="notes-field" for="firstEvidence">首个作品与核对记录</label><textarea class="notes-field" id="firstEvidence" data-first-field="text" rows="5" maxlength="20000" placeholder="记录：实际工具、第一次回答、追问后结果、时间地点核对、你独立换题的结果。未完成部分请标待做。">${esc(learning.first.text||'')}</textarea><p class="text-muted">本页自动暂存草稿。保存首个作品不会自动勾选整课，也不会认证能力。</p><button class="btn btn-primary" data-save-first>保存首个作品</button><p id="firstStatus" role="status">${!feedbackPersisted?'浏览器无法保存；当前仅在本页内存，请立即导出备份。':learning.first.saved?`首个作品已${learning.first.mode==='actual'?'自报实际练习':'记为准备练习'}保存；真实质量待核验。`:'还没有保存首个作品。'}</p><a href="#try">接着做本课分类练习</a></section>`;
+    return `<section class="lesson-section quick-start" id="firstTask"><h2>先做一件有用的小事 · 约10分钟</h2><p>用 AI 把通知整理成行动清单，再亲手核对。不会的词稍后再查。</p>
+<section class="lesson-section"><h3>跟着步骤操作</h3>${button('没有聊天工具？查看可用入口','resources/chat','btn-secondary')}<ol class="step-list"><li>打开能用的文字 AI 工具，新建对话；没有入口时可先准备，真实操作保持待练。</li><li>复制下方“第一次提问”，粘贴到 AI 输入框并发送（约2分钟）。</li><li>复制“继续追问”，在刚才同一个对话的底部输入框粘贴发送，不要新建对话（约3分钟）。</li><li>换一段自己的非敏感通知或小任务，自己提问、修一次并核对（约3分钟）。</li><li>分别复制第一次和追问后的回答，返回学习台粘贴到记录区；对照原通知核查时间、地点和有无编造，再保存作品（约2分钟）。</li></ol></section>
+<section class="lesson-section"><h3>复制提示词</h3>${copyBlock('第一次提问（虚构教学通知）',S.firstPrompt,'first')}${copyBlock('继续追问',S.firstFollowup,'followup')}</section>
+<section class="lesson-section"><h3>检查并记录成果</h3><p><strong>完成标准：</strong>实际发出提问与追问；时间地点保留正确；报名仍为待确认；换题后也能留下可用清单。建议用时不含注册、网络等待。</p><label class="notes-field" for="firstMode">这次做到哪一步？</label><select id="firstMode" data-first-field="mode"><option value="preparation" ${learning.first.mode!=='actual'?'selected':''}>只做准备，尚未实际使用AI</option><option value="actual" ${learning.first.mode==='actual'?'selected':''}>已实际提问、追问并核对</option></select><label class="notes-field" for="firstEvidence">首个作品与核对记录</label><textarea class="notes-field" id="firstEvidence" data-first-field="text" rows="14" maxlength="20000" placeholder="使用的 AI 工具：
+
+第一次回答：
+
+追问后的回答：
+
+原文核对：
+- 时间是否正确：
+- 地点是否正确：
+- 有没有编造信息：
+
+独立换题的结果：
+
+仍未完成的部分：">${esc(learning.first.text||'')}</textarea><p class="text-muted">本页自动暂存草稿。保存首个作品不会自动勾选整课，也不会认证能力。</p><button class="btn btn-primary" data-save-first>保存首个作品</button><p id="firstStatus" role="status">${!feedbackPersisted?'浏览器无法保存；当前仅在本页内存，请立即导出备份。':learning.first.saved?`首个作品已${learning.first.mode==='actual'?'自报实际练习':'记为准备练习'}保存；真实质量待核验。`:'还没有保存首个作品。'}</p></section><a href="#try">接着做本课分类练习</a></section>`;
   }
   function save() {
     state.updatedAt = new Date().toISOString();
@@ -4215,6 +4231,12 @@ window.COURSE_DATA = {
   }
   function drillFeedback(d,v) {return `<p><strong>${v.answer===d.answer?'所选做法与本题条件相符。':'先回到题目条件，再试一次。'}</strong>${esc(d.why)}</p><p>你的理由：${esc(v.why)}</p><p class="text-muted">只核对所选做法，不自动评判自由文本理由。</p>${button('回课补练','lesson/'+d.lesson,'btn-ghost')}`;}
   function copyBlock(label, text, key) { return `<div class="example-block"><div class="example-header"><strong>${esc(label)}</strong><button class="btn btn-ghost" data-copy="${key}">复制</button></div><pre class="code-block"><code>${esc(text)}</code></pre></div>`; }
+  function exampleMaterial(l) { return l.id==='core2-l2' ? l.example.text.split('\n需要修复：')[0] : l.example.text; }
+  function lessonWalkthrough(l) {
+    if(l.id!=='core2-l2')return `<ol class="step-list">${l.steps.map(t=>`<li>${esc(t)}</li>`).join('')}</ol>${copyBlock(l.example.label,l.example.text,'example')}`;
+    const reference=l.example.text.slice(exampleMaterial(l).length+1);
+    return `<h3>第一步：自己找问题</h3><p>${esc(l.steps[0])}</p>${copyBlock('事实材料与待修草稿（虚构）',exampleMaterial(l),'example')}<h3>第二步：查看参考分析</h3><details class="prerequisite" id="referenceAnalysis"><summary>查看参考分析</summary>${reference.split('\n').map(t=>`<p>${esc(t)}</p>`).join('')}</details><h3>第三步：修改并核对</h3><ol class="step-list">${l.steps.slice(1).map(t=>`<li>${esc(t)}</li>`).join('')}</ol>`;
+  }
   function lessonPage(id) {
     const l = lessons.find(x=>x.id===id);
     if (!l) return notFound();
@@ -4224,7 +4246,7 @@ window.COURSE_DATA = {
     const back = l.stage.track === 'core' ? 'home' : 'extensions';
     return `<button class="back-link btn btn-ghost" data-route="${back}">返回${l.stage.track==='core'?'必修路线':'选修与拓展'}</button><div class="lesson-layout"><article class="lesson-article"><header class="lesson-header"><span class="chip">${stageLabel(l.stage)} · ${trackName(l.stage)}</span><h1 class="page-title">${esc(l.title)}</h1><p class="page-description">${esc(l.intro)}</p><div class="lesson-header-meta"><span class="text-muted">${id==='core1-l1'?'首次动手约10分钟；完整课程约20分钟':'建议 '+l.minutes+' 分钟'} · ${esc(l.level)}</span><span class="lesson-state">${completed(id)?'已完成（自查）':state.notes[id]?.trim()||state.checks[id]?.some(Boolean)?'学习中':'待练习'}</span></div></header><section class="lesson-section"><h2>学完这一课，你能做什么</h2><p>${esc(l.objective||l.stage.goal)}</p></section>${prerequisitePanel(l)}${id==='core1-l1'?firstTask():''}
       ${id==='core1-l1'?'<details class="first-theory"><summary>做完再理解：模型、产品与工具（按需展开）</summary>':''}<section class="lesson-section" id="understand"><h2>先弄明白</h2><div class="explanation">${l.explain.map(t=>`<p>${esc(t)}</p>`).join('')}</div>${l.knowledge.map(k=>`<section class="knowledge-section"><h3>${esc(k.title)}</h3>${k.paragraphs.map(p=>`<p>${esc(p)}</p>`).join('')}</section>`).join('')}<p class="knowledge-sources">对照官方资料：${l.knowledgeSources.map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.title)}</a>`).join(' · ')}</p></section>${id==='core1-l1'?'</details>':''}
-      <section class="lesson-section" id="try"><h2>跟着做一次</h2><ol class="step-list">${l.steps.map(t=>`<li>${esc(t)}</li>`).join('')}</ol>${copyBlock(l.example.label,l.example.text,'example')}${l.prompt ? copyBlock('可以这样向 AI 求助',l.prompt,'prompt') : ''}</section>
+      <section class="lesson-section" id="try"><h2>跟着做一次</h2>${lessonWalkthrough(l)}${l.prompt ? copyBlock('可以这样向 AI 求助',l.prompt,'prompt') : ''}</section>
       <section class="lesson-section lesson-practice" id="practice"><h2>轮到你动手</h2><div class="task-block"><p>${esc(l.task)}</p></div><h3>完成后，逐项自查</h3>${checklist(l.checks,state.checks[id],'data-lesson-check')}<label class="notes-field" for="lessonNote">记录你的成果或卡点</label><textarea class="notes-field" id="lessonNote" data-lesson-note placeholder="例如：我做出了什么、结果是什么、还卡在哪一步……" rows="5">${esc(state.notes[id]||'')}</textarea><p class="text-muted" id="noteStatus">输入后自动保存在当前浏览器；不用填写密码或 API Key。</p><div class="lesson-actions"><button class="btn btn-primary" data-complete="${id}">${completed(id) ? '本课已记录完成' : '记录本课完成'}</button>${completed(id) ? `<span class="chip chip-success" id="completionStatus">已自查</span>` : '<span class="text-muted">勾选全部自查项后即可记录</span>'}</div><p class="text-muted">完成记录来自你的自查，不代表老师已验收。</p></section>
       ${l.feedback?.length?`<section class="lesson-section"><h2>反馈与补练</h2><ul class="mini-list">${l.feedback.map(t=>`<li>${esc(t)}</li>`).join('')}</ul>${button('用阶段挑战再试一次','exams/'+l.stage.id,'btn-secondary')}</section>`:''}${S.faults.some(d=>d.lesson===id)?drills(S.faults.filter(d=>d.lesson===id),'先判断问题，再尝试修复'):''}${id==='core4-l1'?drills(S.scenarios,'按任务选工具，先比较再决定'):''}${l.related?.length?`<section class="lesson-section"><h2>已有练习，按需加练</h2><p>以下是保留的旧版项目练习，不影响本课完成。</p><div class="related-lessons">${l.related.map(id=>{const r=lessons.find(x=>x.id===id);return r?button(r.title,'lesson/'+r.id,'btn-ghost'):'';}).join('')}</div></section>`:''}
       <div class="lesson-pagination">${index > 0 ? button('上一课','lesson/'+sequence[index-1].id) : '<span></span>'}${index < sequence.length-1 ? button('下一课','lesson/'+sequence[index+1].id,'btn-primary') : button('前往阶段综合挑战','exams/'+l.stage.id,'btn-primary')}</div></article><aside class="lesson-aside side-stack"><section class="side-panel"><h2>本课导航</h2><p class="lesson-location">${esc(stageLabel(l.stage)+' · '+l.stage.title)}</p><div class="document-list"><a href="#understand">先弄明白</a><a href="#try">跟着做一次</a><a href="#practice">独立换题练习</a></div>${button('本阶段综合挑战','exams/'+l.stage.id,'btn-ghost')}${button('查看AI运用等级图','levels','btn-ghost')}</section><section class="side-panel"><h2>遇到问题怎么问</h2><p>说明目标、已做步骤、实际结果和希望改进的地方。提供必要材料前先处理敏感信息。</p>${button(l.stage.track==='extension'?'查看原项目资料':'查看项目任务书',l.stage.track==='extension'?'project/agent':'project','btn-ghost')}${button('查一个概念','glossary','btn-ghost')}</section></aside></div>`;
@@ -4314,7 +4336,7 @@ window.COURSE_DATA = {
       return;
     }
     const [,id]=current();
-    if(el.dataset.copy) {const l=lessons.find(l=>l.id===id);if(l)copy(el.dataset.copy==='first'?S.firstPrompt:el.dataset.copy==='followup'?S.firstFollowup:el.dataset.copy==='prompt'?l.prompt:l.example.text);}
+    if(el.dataset.copy) {const l=lessons.find(l=>l.id===id);if(l)copy(el.dataset.copy==='first'?S.firstPrompt:el.dataset.copy==='followup'?S.firstFollowup:el.dataset.copy==='prompt'?l.prompt:exampleMaterial(l));}
     if(el.hasAttribute('data-save-first')) {
       if(!learning.first.text?.trim()){const status=$('#firstStatus');status.textContent='先记录实际结果或当前卡点，再保存。';$('#firstEvidence').focus();return;}
       const prior=learning.first.saved;learning.first.saved=new Date().toISOString();const ok=saveFeedback();if(!ok)learning.first.saved=prior||'';
