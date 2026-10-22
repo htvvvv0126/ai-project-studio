@@ -1,10 +1,22 @@
-# AI 项目学习台
+<p align="center">
+  <img src="dist/assets/brand/ai-project-studio-lockup.svg" alt="AI Project Studio · AI 项目学习台" width="560">
+</p>
 
-## [▶ 打开 AI Project Studio 工作台](https://htvvvv0126.github.io/ai-project-studio/)
+<h1 align="center">从零开始，让 AI 真正帮你做事。</h1>
 
-**在线网址：[https://htvvvv0126.github.io/ai-project-studio/](https://htvvvv0126.github.io/ai-project-studio/)**
+<p align="center">六阶段 · 15节核心课程 · 免费学习 · 无需下载代码</p>
 
-无需下载代码。打开后点击「以游客身份继续」，进入 AI 运用等级图，开始学习。
+<p align="center">
+  <a href="https://htvvvv0126.github.io/ai-project-studio/">
+    <img src="docs/open-latest-website.svg" alt="▶ 打开最新版网页" width="560">
+  </a>
+</p>
+
+## [▶ 打开最新版网页](https://htvvvv0126.github.io/ai-project-studio/)
+
+**当前在线版本：v8课程审计完成版 + 品牌视觉升级（2026-10-23）**
+
+打开后点击「以游客身份继续」，即可进入学习路线。无需账号，无需下载或安装。
 
 学习记录保存在当前浏览器；换设备前请在工作台导出记录备份。
 
